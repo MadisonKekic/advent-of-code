@@ -89,7 +89,6 @@ public class redNosedReports {
             redNose.createReports(path, reports);
 
             int count = redNose.isSafeCount(reports);
-            System.out.println(reports.size());
             System.out.println("The number of safe reports is: " + count);
         }
         else{

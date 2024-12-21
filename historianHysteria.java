@@ -17,6 +17,7 @@ import java.util.Scanner;
 
  public class historianHysteria{
     /**
+     * Part 1
      * Reads in data from a single command line argument, path
      * Adds integers from the file named path to the two passed in lists, 
      * leftList and rightList and sorts the two lists
@@ -91,6 +92,29 @@ import java.util.Scanner;
     }
         return sum;
     }
+    
+    /**
+     * Part 2 of Day 1: Calculates the Similarity Score of Two Lists
+     * 
+     * @param leftList The first list you want to compare
+     * @param rightList The second list you want to compare
+     * @return similarityScore The score that results from adding each number in the left list by the number of times it appears in the right list.
+     */
+    public int calculateSimiliarity(ArrayList<Integer> leftList, ArrayList<Integer> rightList){
+        int similarityScore = 0;
+        for (int i = 0; i<leftList.size(); i++){
+            int tempScore = 0;
+            int compareVal = leftList.get(i);
+            for (int j = 0; j<rightList.size(); j++){
+                if (compareVal == rightList.get(j)){
+                    tempScore+=1;
+                }
+            }
+            tempScore=tempScore*leftList.get(i);
+            similarityScore+=tempScore;
+        }
+        return similarityScore;
+    }
 
     /**Adds and sorts integers from a file identified by a command line argument, path; Calls findSum on the resulting array lists*/
     public static void main (String args[]){
@@ -113,6 +137,10 @@ import java.util.Scanner;
             /**Finds and prints the sum of the difference of each ordered pair*/
             int finalSum = hysteria.findSum(leftList, rightList);
             System.out.println("The final sum is: " + finalSum);
+
+            /**Part 2: Finds Similarity Score */
+            int similarityScore = hysteria.calculateSimiliarity(leftList, rightList);
+            System.out.println("The similarity score is: " + similarityScore);
         }
         else{
             System.out.println("Input should be entered as one command line argument indicating the name of the file");
