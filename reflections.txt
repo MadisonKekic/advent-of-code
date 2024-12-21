@@ -1,0 +1,16 @@
+Day 1: Historian Hysteria - Completed December 20, 2024  
+Difficulty: 1/10
+- First I layed out a plan for how I'd solve the problem
+- Scan the file, create two lists, split the lines, add left numbers to left list, add right numbers to right list
+- Create helper method to bubble sort each list
+- Find the sum of the differences
+- Return sum
+
+Issues: I had small errors- I initially got the answer wrong because I messed up one of my for loops
+(i>list.size() instead of i<list.size())
+
+Day 2: Red Nosed Reports- Completed December 20, 2024
+Difficulty: 1/10
+-Slightly more challenging to think through, but thought of method with little time
+-Easier to debug than last one
+Issues: Forgot to save changes in txt file (very puzzling) ALSO struggled for a moment with looping through strings
