@@ -1,4 +1,4 @@
-Day 1: Historian Hysteria - Completed December 20, 2024  
+Historian Hysteria
 Difficulty: 1/10
 - First I layed out a plan for how I'd solve the problem
 - Scan the file, create two lists, split the lines, add left numbers to left list, add right numbers to right list
@@ -9,8 +9,18 @@ Difficulty: 1/10
 Issues: I had small errors- I initially got the answer wrong because I messed up one of my for loops
 (i>list.size() instead of i<list.size())
 
-Day 2: Red Nosed Reports- Completed December 20, 2024
+Part 2: Difficulty - 1/10 (Small Error: Got the wrong index- used i instead of j)
+
+Red Nosed Reports- Completed December 20, 2024
 Difficulty: 1/10
 -Slightly more challenging to think through, but thought of method with little time
 -Easier to debug than last one
 Issues: Forgot to save changes in txt file (very puzzling) ALSO struggled for a moment with looping through strings
+
+MullItOver
+Difficulty: 7/10
+I wasn't able to complete this one. While I knew how to detect whether or not a mul() was coming up in the text file,
+I did not know how to determine when to stop trying to detect an integer/how I will determine when one integer ends and another begins.
+In hind sight, I feel like I could have did a while loop and looped until the character at index i was not an integer or was a comma and then
+use another while loop to determine if i was not an integer or ")".
+

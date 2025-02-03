@@ -40,28 +40,76 @@ public class redNosedReports {
      }
 
      private boolean isIncreasing(ArrayList<Integer> report){
+        int problemCount = 0;
         for (int i = 0; i<report.size()-1; i++){
             if (report.get(i)>report.get(i+1)){
-                return false;
+                problemCount+=1;
+                if (problemCount>1){
+                    return false;
+                }
+                else if (i>=report.size()-2){
+                    report.remove(i+1);
+                }
+                else{
+                    if(report.get(i)>report.get(i+2)){
+                        return false;
+                    }
+                    else{
+                        report.remove(i+1);
+                    }
+                }
             }
         }
         return true;
      }
 
      private boolean isDecreasing(ArrayList<Integer> report){
+        int problemCount = 0;
         for (int i = 0; i<report.size()-1; i++){
             if(report.get(i)<report.get(i+1)){
-                return false;
-            }
+                problemCount+=1;
+                if (problemCount>1){
+                    return false;
+                }
+                else if (i>=report.size()-2){
+                    report.remove(i+1);
+                }
+                else{
+                    if(report.get(i)<report.get(i+2)){
+                        return false;
+                    }
+                    else{
+                        report.remove(i+1);
+                    }
+                }
+    
         }
+    }
         return true;
      }
 
      private boolean isStable(ArrayList<Integer> report){
+        int problemCount=0;
         for (int i = 0; i<report.size()-1; i++){
             int difference = Math.abs(report.get(i) - report.get(i+1));
             if (difference<1 || difference>3){
-                return false;
+                problemCount+=1;
+                if(problemCount>1){
+                    return false;
+                }
+                else if (i>=report.size()-2){
+                    report.remove(i+1);
+                }
+                else{
+                    int newDifference = Math.abs(report.get(i) - report.get(i+1));
+                    if(newDifference<1 || newDifference>3){
+                        return false;
+                    }
+                    else{
+                        report.remove(i+1);
+                    }
+                    
+                }
             }
         }
         return true;
